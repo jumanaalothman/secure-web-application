@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <a href="index.html">Home</a>
+</div>
+
+<div class="container">
+  <h2 id="welcomeMessage">Welcome, User</h2>
+  <p id="roleText">Role: user</p>
+  <!-- Admin panel button hidden by default, shown only for admin users -->
+  <button id="adminButton" onclick="window.location.href='admin.html'" style="display: none;">
+    Admin Panel
+  </button>
+
+
+  <hr>
+
+  <!-- ========== BIO SECTION - XSS VULNERABLE ========== -->
+  <h3>Update Your Bio (XSS Vulnerable)</h3>
+  <input type="text" id="bioInput" placeholder="Enter your bio" style="width:90%">
+  <br><br>
+  <button onclick="updateBio()">Update Bio</button>
+  <button onclick="showAllBios()">Show All Bios</button>
+
+  <hr>
+
+  <h3>Comments</h3>
+  <input type="text" id="commentInput" placeholder="Write a comment">
+  <button onclick="addComment()">Add</button>
+
+  <ul id="commentsList"></ul>
+
+  <hr>
+
+  <button onclick="logout()">Logout</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
